@@ -300,6 +300,56 @@ body {
     }
 }
 
+/* Hamburger button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  margin: 5px 0;
+  background: #fff;
+}
+
+/* Mobile navigation */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .main-nav nav {
+    position: absolute;
+    top: 96px;          /* nav height */
+    left: 0;
+    width: 100%;
+    background: #1f1f1f;
+    display: none;
+    flex-direction: column;
+    padding: 12px 0;
+  }
+
+  .main-nav nav a {
+    color: #fff;
+    padding: 12px 20px;
+    margin: 0;
+  }
+
+  .main-nav nav.show {
+    display: flex;
+  }
+
+  .nav-container {
+    flex-direction: row;
+  }
+}
+
+  
 </style>
 </head>
 
@@ -319,7 +369,11 @@ body {
   </a>
 </div>
 
-
+<button class="menu-toggle" aria-label="Toggle menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
 
     <nav>
        <a href="#upcoming" data-i18n="nav_upcoming"></a>
@@ -632,5 +686,13 @@ window.addEventListener('DOMContentLoaded', ()=>{
 });
 </script>
 
+<script>
+document.querySelector('.menu-toggle').addEventListener('click', () => {
+  document.querySelector('.main-nav nav').classList.toggle('show');
+});
+</script>
+
+  
 </body>
 </html>
+
