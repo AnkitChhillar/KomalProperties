@@ -330,7 +330,7 @@ body {
   }
 
   .main-nav .logo img {
-    max-height: 72px;
+    max-height: 92px;
     height: auto;
   }
 }
@@ -714,6 +714,16 @@ window.addEventListener('DOMContentLoaded', ()=>{
 </script>
 
 <script>
+/* Mobile menu auto-close on link click */
+document.querySelectorAll('.main-nav nav a').forEach(link => {
+  link.addEventListener('click', () => {
+    const nav = document.querySelector('.main-nav nav');
+    nav.classList.remove('show');
+  });
+});
+</script>
+  
+<script>
 document.querySelector('.menu-toggle').addEventListener('click', () => {
   document.querySelector('.main-nav nav').classList.toggle('show');
 });
@@ -722,5 +732,6 @@ document.querySelector('.menu-toggle').addEventListener('click', () => {
   
 </body>
 </html>
+
 
 
