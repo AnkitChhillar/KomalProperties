@@ -550,10 +550,22 @@ body {
 <section id="enquiry" class="enquiry">
 <div class="title" data-i18n="enquiry_title"></div>
 <form>
-<input type="text" placeholder="Your Name" required>
-<input type="tel" placeholder="Phone Number" required>
-<textarea placeholder="Your Requirement"></textarea>
-<button type="submit" data-i18n="submit"></button>
+<!-- Name -->
+    <input type="text" name="name" placeholder="अपना नाम दर्ज करें" required data-i18n="name_placeholder">
+
+    <!-- Email -->
+    <input type="email" name="email" placeholder="अपना ईमेल दर्ज करें" required data-i18n="email_placeholder">
+
+    <!-- Phone -->
+    <input type="tel" name="phone" placeholder="अपना फोन नंबर दर्ज करें" required pattern="[0-9]{10}" data-i18n="phone_placeholder">
+
+    <!-- WhatsApp -->
+    <input type="tel" name="whatsapp" placeholder="अपना व्हाट्सएप नंबर दर्ज करें" required pattern="[0-9]{10}" data-i18n="whatsapp_placeholder">
+
+    <!-- Message -->
+    <textarea name="message" placeholder="अपनी आवश्यकता लिखें" data-i18n="message_placeholder"></textarea>
+
+    <button type="submit" data-i18n="submit">भेजें</button>
 </form>
 </section>
 
@@ -739,6 +751,7 @@ document.querySelector('.menu-toggle').addEventListener('click', () => {
   
 </body>
 </html>
+
 
 
 
